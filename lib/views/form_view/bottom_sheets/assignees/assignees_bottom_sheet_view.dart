@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:frappe_app/config/frappe_icons.dart';
-import 'package:frappe_app/config/frappe_palette.dart';
-import 'package:frappe_app/form/controls/link_field.dart';
-import 'package:frappe_app/model/doctype_response.dart';
-import 'package:frappe_app/model/get_doc_response.dart';
-import 'package:frappe_app/model/offline_storage.dart';
-import 'package:frappe_app/utils/frappe_alert.dart';
-import 'package:frappe_app/utils/frappe_icon.dart';
-import 'package:frappe_app/views/base_view.dart';
+import 'package:webwire_app/config/frappe_icons.dart';
+import 'package:webwire_app/config/frappe_palette.dart';
+import 'package:webwire_app/form/controls/link_field.dart';
+import 'package:webwire_app/model/doctype_response.dart';
+import 'package:webwire_app/model/get_doc_response.dart';
+import 'package:webwire_app/model/offline_storage.dart';
+import 'package:webwire_app/utils/frappe_alert.dart';
+import 'package:webwire_app/utils/frappe_icon.dart';
+import 'package:webwire_app/views/base_view.dart';
 
-import 'package:frappe_app/views/form_view/bottom_sheets/assignees/assignees_bottom_sheet_viewmodel.dart';
-import 'package:frappe_app/widgets/frappe_bottom_sheet.dart';
-import 'package:frappe_app/widgets/user_avatar.dart';
+import 'package:webwire_app/views/form_view/bottom_sheets/assignees/assignees_bottom_sheet_viewmodel.dart';
+import 'package:webwire_app/widgets/frappe_bottom_sheet.dart';
+import 'package:webwire_app/widgets/user_avatar.dart';
 
 class AssigneesBottomSheetView extends StatefulWidget {
   final String doctype;

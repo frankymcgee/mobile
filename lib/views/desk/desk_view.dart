@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:frappe_app/model/desk_sidebar_items_response.dart';
+import 'package:webwire_app/model/desk_sidebar_items_response.dart';
 
-import 'package:frappe_app/utils/helpers.dart';
-import 'package:frappe_app/utils/navigation_helper.dart';
-import 'package:frappe_app/widgets/padded_card_list_tile.dart';
+import 'package:webwire_app/utils/helpers.dart';
+import 'package:webwire_app/utils/navigation_helper.dart';
+import 'package:webwire_app/widgets/padded_card_list_tile.dart';
 
 import 'package:provider/provider.dart';
 

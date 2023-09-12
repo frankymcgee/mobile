@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:frappe_app/config/frappe_icons.dart';
-import 'package:frappe_app/model/common.dart';
-import 'package:frappe_app/utils/frappe_icon.dart';
+import 'package:webwire_app/config/frappe_icons.dart';
+import 'package:webwire_app/model/common.dart';
+import 'package:webwire_app/utils/frappe_icon.dart';
 
 import '../../config/palette.dart';
 import '../../model/doctype_response.dart';
@@ -33,7 +33,7 @@ class Select extends StatelessWidget with Control, ControlInput {
 
     if (f != null) {
       validators.add(
-        f(context),
+        f(),
       );
     }
 

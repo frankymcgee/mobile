@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mentions/flutter_mentions.dart';
-import 'package:frappe_app/config/frappe_palette.dart';
-import 'package:frappe_app/config/palette.dart';
-import 'package:frappe_app/model/config.dart';
-import 'package:frappe_app/model/offline_storage.dart';
-import 'package:frappe_app/utils/enums.dart';
-import 'package:frappe_app/widgets/frappe_button.dart';
-import 'package:frappe_app/widgets/user_avatar.dart';
+import 'package:webwire_app/config/frappe_palette.dart';
+import 'package:webwire_app/config/palette.dart';
+import 'package:webwire_app/model/config.dart';
+import 'package:webwire_app/model/offline_storage.dart';
+import 'package:webwire_app/utils/enums.dart';
+import 'package:webwire_app/widgets/frappe_button.dart';
+import 'package:webwire_app/widgets/user_avatar.dart';
 
 import '../app/locator.dart';
 

@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:frappe_app/model/common.dart';
-import 'package:frappe_app/model/get_doc_response.dart';
-import 'package:frappe_app/utils/loading_indicator.dart';
+import 'package:webwire_app/model/common.dart';
+import 'package:webwire_app/model/get_doc_response.dart';
+import 'package:webwire_app/utils/loading_indicator.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../app/locator.dart';

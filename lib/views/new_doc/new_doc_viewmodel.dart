@@ -3,11 +3,11 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:frappe_app/model/common.dart';
-import 'package:frappe_app/model/config.dart';
-import 'package:frappe_app/utils/loading_indicator.dart';
-import 'package:frappe_app/utils/navigation_helper.dart';
-import 'package:frappe_app/views/form_view/form_view.dart';
+import 'package:webwire_app/model/common.dart';
+import 'package:webwire_app/model/config.dart';
+import 'package:webwire_app/utils/loading_indicator.dart';
+import 'package:webwire_app/utils/navigation_helper.dart';
+import 'package:webwire_app/views/form_view/form_view.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../app/locator.dart';

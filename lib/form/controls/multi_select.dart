@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:frappe_app/model/common.dart';
-import 'package:frappe_app/widgets/form_builder_chips_input.dart';
+import 'package:webwire_app/model/common.dart';
+import 'package:webwire_app/widgets/form_builder_chips_input.dart';
 
 import '../../model/doctype_response.dart';
 import '../../app/locator.dart';
@@ -51,7 +51,7 @@ class _MultiSelectState extends State<MultiSelect> with Control, ControlInput {
     var f = setMandatory(widget.doctypeField);
 
     if (f != null) {
-      validators.add(f(context));
+      validators.add(f());
     }
 
     var initialValue;

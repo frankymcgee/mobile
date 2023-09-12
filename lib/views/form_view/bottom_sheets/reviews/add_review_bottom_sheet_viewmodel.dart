@@ -1,10 +1,10 @@
-import 'package:frappe_app/app/locator.dart';
-import 'package:frappe_app/model/common.dart';
-import 'package:frappe_app/model/config.dart';
-import 'package:frappe_app/model/doctype_response.dart';
-import 'package:frappe_app/model/get_doc_response.dart';
-import 'package:frappe_app/services/api/api.dart';
-import 'package:frappe_app/views/base_viewmodel.dart';
+import 'package:webwire_app/app/locator.dart';
+import 'package:webwire_app/model/common.dart';
+import 'package:webwire_app/model/config.dart';
+import 'package:webwire_app/model/doctype_response.dart';
+import 'package:webwire_app/model/get_doc_response.dart';
+import 'package:webwire_app/services/api/api.dart';
+import 'package:webwire_app/views/base_viewmodel.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton

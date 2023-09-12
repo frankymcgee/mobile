@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:frappe_app/config/frappe_icons.dart';
-import 'package:frappe_app/config/frappe_palette.dart';
+import 'package:webwire_app/config/frappe_icons.dart';
+import 'package:webwire_app/config/frappe_palette.dart';
 
-import 'package:frappe_app/utils/frappe_icon.dart';
-import 'package:frappe_app/views/base_view.dart';
+import 'package:webwire_app/utils/frappe_icon.dart';
+import 'package:webwire_app/views/base_view.dart';
 
-import 'package:frappe_app/widgets/frappe_bottom_sheet.dart';
+import 'package:webwire_app/widgets/frappe_bottom_sheet.dart';
 
 import 'add_attachments_bottom_sheet_viewmodel.dart';
 

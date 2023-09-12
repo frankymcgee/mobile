@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:frappe_app/model/doctype_response.dart';
+import 'package:webwire_app/model/doctype_response.dart';
 
 import '../../config/palette.dart';
 
@@ -22,13 +22,13 @@ class Float extends StatelessWidget with Control, ControlInput {
 
   @override
   Widget build(BuildContext context) {
-    List<String? Function(dynamic?)> validators = [];
+    List<String? Function(dynamic)> validators = [];
 
     var f = setMandatory(doctypeField);
 
     if (f != null) {
       validators.add(
-        f(context),
+        f(),
       );
     }
 

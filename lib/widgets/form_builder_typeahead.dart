@@ -47,7 +47,7 @@ class FormBuilderTypeAhead<T> extends FormBuilderField<T> {
   ///   _controller.text = suggestion['name'];
   /// }
   /// ```
-  final SuggestionSelectionCallback<T> onSuggestionSelected;
+  final SuggestionSelectionCallback<T>? onSuggestionSelected;
 
   /// Called for each suggestion returned by [suggestionsCallback] to build the
   /// corresponding widget.
@@ -73,7 +73,7 @@ class FormBuilderTypeAhead<T> extends FormBuilderField<T> {
 
   /// Used to control the `_SuggestionsBox`. Allows manual control to
   /// open, close, toggle, or resize the `_SuggestionsBox`.
-  final SuggestionsBoxController suggestionsBoxController;
+  final SuggestionsBoxController? suggestionsBoxController;
 
   /// The duration to wait after the user stops typing before calling
   /// [suggestionsCallback]
@@ -95,7 +95,7 @@ class FormBuilderTypeAhead<T> extends FormBuilderField<T> {
   /// ```
   ///
   /// If not specified, a [CircularProgressIndicator](https://docs.flutter.io/flutter/material/CircularProgressIndicator-class.html) is shown
-  final WidgetBuilder loadingBuilder;
+  final WidgetBuilder? loadingBuilder;
 
   /// Called when [suggestionsCallback] returns an empty array.
   ///
@@ -109,7 +109,7 @@ class FormBuilderTypeAhead<T> extends FormBuilderField<T> {
   /// ```
   ///
   /// If not specified, a simple text is shown
-  final WidgetBuilder noItemsFoundBuilder;
+  final WidgetBuilder? noItemsFoundBuilder;
 
   /// Called when [suggestionsCallback] throws an exception.
   ///
@@ -123,7 +123,7 @@ class FormBuilderTypeAhead<T> extends FormBuilderField<T> {
   /// ```
   ///
   /// If not specified, the error is shown in [ThemeData.errorColor](https://docs.flutter.io/flutter/material/ThemeData/errorColor.html)
-  final ErrorBuilder errorBuilder;
+  final ErrorBuilder? errorBuilder;
 
   /// Called to display animations when [suggestionsCallback] returns suggestions
   ///
@@ -149,7 +149,7 @@ class FormBuilderTypeAhead<T> extends FormBuilderField<T> {
   /// To fully remove the animation, just return `suggestionsBox`
   ///
   /// If not specified, a [SizeTransition](https://docs.flutter.io/flutter/widgets/SizeTransition-class.html) is shown.
-  final AnimationTransitionBuilder transitionBuilder;
+  final AnimationTransitionBuilder? transitionBuilder;
 
   /// The duration that [transitionBuilder] animation takes.
   ///
@@ -261,12 +261,12 @@ class FormBuilderTypeAhead<T> extends FormBuilderField<T> {
   FormBuilderTypeAhead({
     Key? key,
     //From Super
-    required String? name,
-    FormFieldValidator<T>? validator,
+    required String name,
+    FormFieldValidator<dynamic>? validator,
     required T initialValue,
     InputDecoration decoration = const InputDecoration(),
-    ValueChanged<T>? onChanged,
-    ValueTransformer<T>? valueTransformer,
+    required ValueChanged<dynamic> onChanged,
+    ValueTransformer<dynamic>? valueTransformer,
     bool enabled = true,
     FormFieldSetter<T>? onSaved,
     AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
@@ -275,7 +275,7 @@ class FormBuilderTypeAhead<T> extends FormBuilderField<T> {
     required this.itemBuilder,
     required this.suggestionsCallback,
     this.getImmediateSuggestions = false,
-    this.selectionToTextTransformer,
+    required this.selectionToTextTransformer,
     this.errorBuilder,
     this.noItemsFoundBuilder,
     this.loadingBuilder,
@@ -298,7 +298,7 @@ class FormBuilderTypeAhead<T> extends FormBuilderField<T> {
     this.onSuggestionSelected,
     this.controller,
     this.hideKeyboard = false,
-  })  : assert(T == String || selectionToTextTransformer != null),
+  })  : assert(T == String),
         super(
           key: key,
           initialValue: initialValue,
@@ -310,7 +310,7 @@ class FormBuilderTypeAhead<T> extends FormBuilderField<T> {
           onSaved: onSaved,
           enabled: enabled,
           onReset: onReset,
-          decoration: decoration,
+          //decoration: decoration,
           focusNode: focusNode,
           builder: (FormFieldState<T> field) {
             final state = field as _FormBuilderTypeAheadState<T>;
@@ -322,11 +322,11 @@ class FormBuilderTypeAhead<T> extends FormBuilderField<T> {
                 controller: state._typeAheadController,
                 style: state.enabled
                     ? textFieldConfiguration.style
-                    : theme.textTheme.subtitle1.copyWith(
+                    : theme.textTheme.titleMedium?.copyWith(
                         color: theme.disabledColor,
                       ),
                 focusNode: state.effectiveFocusNode,
-                decoration: state.decoration,
+                //decoration: state.decoration,
               ),
               // HACK to satisfy strictness
               suggestionsCallback: suggestionsCallback,
@@ -374,7 +374,7 @@ class FormBuilderTypeAhead<T> extends FormBuilderField<T> {
 
 class _FormBuilderTypeAheadState<T>
     extends FormBuilderFieldState<FormBuilderTypeAhead<T>, T> {
-  TextEditingController _typeAheadController;
+  late TextEditingController _typeAheadController;
 
   @override
   void initState() {
@@ -398,7 +398,7 @@ class _FormBuilderTypeAheadState<T>
   }
 
   @override
-  void didChange(T value) {
+  void didChange(T? value) {
     super.didChange(value);
 
     if (_typeAheadController.text != value) {
@@ -418,6 +418,6 @@ class _FormBuilderTypeAheadState<T>
   @override
   void reset() {
     super.reset();
-    _typeAheadController.text = initialValue?.toString();
+    _typeAheadController.text = initialValue.toString();
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:frappe_app/utils/enums.dart';
+import 'package:webwire_app/utils/enums.dart';
 
 class BaseViewModel extends ChangeNotifier {
   ViewState _state = ViewState.idle;

@@ -11,7 +11,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'utils/helpers.dart';
 import 'utils/http.dart';
 
-import 'scheduler.dart';
+//import 'scheduler.dart';
 import 'app/locator.dart';
 import 'app.dart';
 
@@ -24,7 +24,7 @@ void main() async {
   await resetValues();
   await initDb();
   await FlutterDownloader.initialize();
-  FlutterDownloader.registerCallback(downloadCallback);
+  FlutterDownloader.registerCallback(downloadCallback as DownloadCallback);
   await initApiConfig();
   await initLocalNotifications();
   // await initAutoSync();
@@ -38,7 +38,7 @@ void main() async {
 }
 
 void downloadCallback(String id, DownloadTaskStatus status, int progress) {
-  final SendPort send =
+  final SendPort? send =
       IsolateNameServer.lookupPortByName('downloader_send_port');
-  send.send([id, status, progress]);
+  send?.send([id, status, progress]);
 }

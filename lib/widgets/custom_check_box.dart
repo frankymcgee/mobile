@@ -101,9 +101,9 @@ class CustomCheckbox extends StatefulWidget {
     this.autofocus = false,
     this.shape,
     this.side,
-  })  : assert(tristate != null),
+  })  : //assert(tristate != null),
         assert(tristate || value != null),
-        assert(autofocus != null),
+        //assert(autofocus != null),
         super(key: key);
 
   /// Whether this checkbox is checked.

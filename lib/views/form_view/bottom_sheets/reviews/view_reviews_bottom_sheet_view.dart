@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-import 'package:frappe_app/config/frappe_icons.dart';
-import 'package:frappe_app/config/frappe_palette.dart';
-import 'package:frappe_app/model/doctype_response.dart';
-import 'package:frappe_app/model/get_doc_response.dart';
+import 'package:webwire_app/config/frappe_icons.dart';
+import 'package:webwire_app/config/frappe_palette.dart';
+import 'package:webwire_app/model/doctype_response.dart';
+import 'package:webwire_app/model/get_doc_response.dart';
 
-import 'package:frappe_app/utils/frappe_icon.dart';
-import 'package:frappe_app/views/base_view.dart';
-import 'package:frappe_app/views/form_view/bottom_sheets/reviews/add_review_bottom_sheet_view.dart';
-import 'package:frappe_app/views/form_view/bottom_sheets/reviews/view_reviews_bottom_sheet_viewmodel.dart';
+import 'package:webwire_app/utils/frappe_icon.dart';
+import 'package:webwire_app/views/base_view.dart';
+import 'package:webwire_app/views/form_view/bottom_sheets/reviews/add_review_bottom_sheet_view.dart';
+import 'package:webwire_app/views/form_view/bottom_sheets/reviews/view_reviews_bottom_sheet_viewmodel.dart';
 
-import 'package:frappe_app/widgets/frappe_bottom_sheet.dart';
-import 'package:frappe_app/widgets/review_pill.dart';
+import 'package:webwire_app/widgets/frappe_bottom_sheet.dart';
+import 'package:webwire_app/widgets/review_pill.dart';
 
 class ViewReviewsBottomSheetView extends StatelessWidget {
   final List reviews;

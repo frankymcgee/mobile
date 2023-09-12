@@ -1,7 +1,7 @@
-import 'package:frappe_app/model/doctype_response.dart';
-import 'package:frappe_app/model/get_doc_response.dart';
-import 'package:frappe_app/model/upload_file_response.dart';
-import 'package:frappe_app/views/base_viewmodel.dart';
+import 'package:webwire_app/model/doctype_response.dart';
+import 'package:webwire_app/model/get_doc_response.dart';
+import 'package:webwire_app/model/upload_file_response.dart';
+import 'package:webwire_app/views/base_viewmodel.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton

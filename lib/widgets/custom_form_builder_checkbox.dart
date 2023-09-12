@@ -12,12 +12,12 @@ class CustomFormBuilderCheckbox extends FormBuilderField<bool> {
   /// Additional content displayed below the title.
   ///
   /// Typically a [Text] widget.
-  final Widget subtitle;
+  final Widget? subtitle;
 
   /// A widget to display on the opposite side of the tile from the checkbox.
   ///
   /// Typically an [Icon] widget.
-  final Widget secondary;
+  final Widget? secondary;
 
   /// The color to use when this checkbox is checked.
   ///
@@ -27,7 +27,7 @@ class CustomFormBuilderCheckbox extends FormBuilderField<bool> {
   /// The color to use for the check icon when this checkbox is checked.
   ///
   /// Defaults to Color(0xFFFFFFFF).
-  final Color checkColor;
+  final Color? checkColor;
 
   /// Where to place the control relative to its label.
   final ListTileControlAffinity controlAffinity;
@@ -87,9 +87,9 @@ class CustomFormBuilderCheckbox extends FormBuilderField<bool> {
     FocusNode? focusNode,
     required this.activeColor,
     required this.label,
-    required this.checkColor,
-    required this.subtitle,
-    required this.secondary,
+    this.checkColor,
+    this.subtitle,
+    this.secondary,
     this.controlAffinity = ListTileControlAffinity.leading,
     this.contentPadding = EdgeInsets.zero,
     this.autofocus = false,

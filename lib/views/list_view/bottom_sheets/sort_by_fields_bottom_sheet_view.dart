@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:frappe_app/config/frappe_icons.dart';
-import 'package:frappe_app/config/frappe_palette.dart';
-import 'package:frappe_app/model/doctype_response.dart';
-import 'package:frappe_app/utils/frappe_icon.dart';
-import 'package:frappe_app/views/base_view.dart';
-import 'package:frappe_app/views/list_view/bottom_sheets/sort_by_fields_bottom_sheet_viewmodel.dart';
-import 'package:frappe_app/widgets/frappe_bottom_sheet.dart';
+import 'package:webwire_app/config/frappe_icons.dart';
+import 'package:webwire_app/config/frappe_palette.dart';
+import 'package:webwire_app/model/doctype_response.dart';
+import 'package:webwire_app/utils/frappe_icon.dart';
+import 'package:webwire_app/views/base_view.dart';
+import 'package:webwire_app/views/list_view/bottom_sheets/sort_by_fields_bottom_sheet_viewmodel.dart';
+import 'package:webwire_app/widgets/frappe_bottom_sheet.dart';
 
 class SortByFieldsBottomSheetView extends StatelessWidget {
   final List<DoctypeField> fields;

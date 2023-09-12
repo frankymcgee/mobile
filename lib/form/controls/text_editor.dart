@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
+//import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:frappe_app/widgets/form_builder_text_editor.dart';
+import 'package:webwire_app/widgets/form_builder_text_editor.dart';
 
 import '../../model/doctype_response.dart';
 
@@ -31,7 +31,7 @@ class TextEditor extends StatelessWidget with Control, ControlInput {
 
     if (f != null) {
       validators.add(
-        f(context),
+        f(),
       );
     }
 

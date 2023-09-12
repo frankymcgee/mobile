@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:frappe_app/config/frappe_icons.dart';
-import 'package:frappe_app/model/upload_file_response.dart';
-import 'package:frappe_app/utils/frappe_icon.dart';
-import 'package:frappe_app/views/form_view/bottom_sheets/attachments/view_attachments_bottom_sheet_view.dart';
+import 'package:webwire_app/config/frappe_icons.dart';
+import 'package:webwire_app/model/upload_file_response.dart';
+import 'package:webwire_app/utils/frappe_icon.dart';
+import 'package:webwire_app/views/form_view/bottom_sheets/attachments/view_attachments_bottom_sheet_view.dart';
 
 import 'existing_attachments_bottom_sheet.dart';
 

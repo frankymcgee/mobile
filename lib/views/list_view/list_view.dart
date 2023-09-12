@@ -2,12 +2,12 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_pagewise/flutter_pagewise.dart';
-import 'package:frappe_app/config/frappe_palette.dart';
-import 'package:frappe_app/model/common.dart';
-import 'package:frappe_app/utils/navigation_helper.dart';
-import 'package:frappe_app/views/base_view.dart';
-import 'package:frappe_app/views/list_view/bottom_sheets/filters_bottom_sheet_view.dart';
-import 'package:frappe_app/views/new_doc/new_doc_view.dart';
+import 'package:webwire_app/config/frappe_palette.dart';
+import 'package:webwire_app/model/common.dart';
+import 'package:webwire_app/utils/navigation_helper.dart';
+import 'package:webwire_app/views/base_view.dart';
+import 'package:webwire_app/views/list_view/bottom_sheets/filters_bottom_sheet_view.dart';
+import 'package:webwire_app/views/new_doc/new_doc_view.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 import '../../model/doctype_response.dart';

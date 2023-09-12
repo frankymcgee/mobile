@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:frappe_app/config/frappe_palette.dart';
-import 'package:frappe_app/utils/helpers.dart';
-import 'package:frappe_app/views/awesome_bar/awesome_bar_viewmodel.dart';
-import 'package:frappe_app/widgets/card_list_tile.dart';
+import 'package:webwire_app/config/frappe_palette.dart';
+import 'package:webwire_app/utils/helpers.dart';
+import 'package:webwire_app/views/awesome_bar/awesome_bar_viewmodel.dart';
+import 'package:webwire_app/widgets/card_list_tile.dart';
 
 import '../../utils/frappe_icon.dart';
 

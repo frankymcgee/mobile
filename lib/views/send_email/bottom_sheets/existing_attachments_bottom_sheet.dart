@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:frappe_app/app/locator.dart';
-import 'package:frappe_app/config/frappe_icons.dart';
-import 'package:frappe_app/config/frappe_palette.dart';
-import 'package:frappe_app/model/get_doc_response.dart';
-import 'package:frappe_app/services/api/api.dart';
-import 'package:frappe_app/utils/frappe_icon.dart';
-import 'package:frappe_app/views/send_email/send_email_view.dart';
-import 'package:frappe_app/widgets/frappe_bottom_sheet.dart';
+import 'package:webwire_app/app/locator.dart';
+import 'package:webwire_app/config/frappe_icons.dart';
+import 'package:webwire_app/config/frappe_palette.dart';
+import 'package:webwire_app/model/get_doc_response.dart';
+import 'package:webwire_app/services/api/api.dart';
+import 'package:webwire_app/utils/frappe_icon.dart';
+import 'package:webwire_app/views/send_email/send_email_view.dart';
+import 'package:webwire_app/widgets/frappe_bottom_sheet.dart';
 
 class ExistingAttachmentsBottomSheet extends StatefulWidget {
   final String doctype;

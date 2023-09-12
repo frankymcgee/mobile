@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:frappe_app/app/locator.dart';
-import 'package:frappe_app/model/common.dart';
-import 'package:frappe_app/model/offline_storage.dart';
-import 'package:frappe_app/services/api/api.dart';
-import 'package:frappe_app/utils/loading_indicator.dart';
-import 'package:frappe_app/views/base_viewmodel.dart';
-import 'package:frappe_app/views/desk/desk_view.dart';
-import 'package:frappe_app/views/list_view/list_view.dart';
-import 'package:frappe_app/views/new_doc/new_doc_view.dart';
+import 'package:webwire_app/app/locator.dart';
+import 'package:webwire_app/model/common.dart';
+import 'package:webwire_app/model/offline_storage.dart';
+import 'package:webwire_app/services/api/api.dart';
+import 'package:webwire_app/utils/loading_indicator.dart';
+import 'package:webwire_app/views/base_viewmodel.dart';
+import 'package:webwire_app/views/desk/desk_view.dart';
+import 'package:webwire_app/views/list_view/list_view.dart';
+import 'package:webwire_app/views/new_doc/new_doc_view.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton

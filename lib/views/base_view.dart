@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frappe_app/app/locator.dart';
+import 'package:webwire_app/app/locator.dart';
 import 'package:provider/provider.dart';
 
 import 'base_viewmodel.dart';

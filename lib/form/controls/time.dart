@@ -3,8 +3,8 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:intl/intl.dart';
 
-import 'package:frappe_app/config/palette.dart';
-import 'package:frappe_app/model/doctype_response.dart';
+import 'package:webwire_app/config/palette.dart';
+import 'package:webwire_app/model/doctype_response.dart';
 
 import 'base_control.dart';
 import 'base_input.dart';
@@ -22,13 +22,13 @@ class Time extends StatelessWidget with Control, ControlInput {
 
   @override
   Widget build(BuildContext context) {
-    List<String? Function(dynamic?)> validators = [];
+    List<String? Function(dynamic)> validators = [];
 
     var f = setMandatory(doctypeField);
 
     if (f != null) {
       validators.add(
-        f(context),
+        f(),
       );
     }
 
