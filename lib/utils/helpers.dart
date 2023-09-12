@@ -1,4 +1,3 @@
-// @dart=2.9
 import 'dart:convert';
 import 'dart:io';
 
@@ -8,13 +7,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_js/flutter_js.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:frappe_app/model/common.dart';
-import 'package:frappe_app/model/offline_storage.dart';
-import 'package:frappe_app/services/storage_service.dart';
-import 'package:frappe_app/utils/frappe_alert.dart';
-import 'package:frappe_app/utils/navigation_helper.dart';
-import 'package:frappe_app/views/login/login_view.dart';
-import 'package:frappe_app/widgets/frappe_button.dart';
+import 'package:webwire_app/model/common.dart';
+import 'package:webwire_app/model/offline_storage.dart';
+import 'package:webwire_app/services/storage_service.dart';
+import 'package:webwire_app/utils/frappe_alert.dart';
+import 'package:webwire_app/utils/navigation_helper.dart';
+import 'package:webwire_app/views/login/login_view.dart';
+import 'package:webwire_app/widgets/frappe_button.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 

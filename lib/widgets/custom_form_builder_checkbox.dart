@@ -1,9 +1,6 @@
-// @dart=2.9
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:frappe_app/widgets/custom_check_box.dart';
+import 'package:webwire_app/widgets/custom_check_box.dart';
 
 /// Single Checkbox field
 class CustomFormBuilderCheckbox extends FormBuilderField<bool> {
@@ -70,10 +67,10 @@ class CustomFormBuilderCheckbox extends FormBuilderField<bool> {
   /// Creates a single Checkbox field
   CustomFormBuilderCheckbox({
     //From Super
-    Key key,
-    @required String name,
-    FormFieldValidator<bool> validator,
-    bool initialValue,
+    Key? key,
+    required String name,
+    FormFieldValidator<bool>? validator,
+    bool? initialValue,
     InputDecoration decoration = const InputDecoration(
       border: InputBorder.none,
       focusedBorder: InputBorder.none,
@@ -81,18 +78,18 @@ class CustomFormBuilderCheckbox extends FormBuilderField<bool> {
       errorBorder: InputBorder.none,
       disabledBorder: InputBorder.none,
     ),
-    ValueChanged onChanged,
-    ValueTransformer<bool> valueTransformer,
+    ValueChanged? onChanged,
+    ValueTransformer<bool?>? valueTransformer,
     bool enabled = true,
-    FormFieldSetter<bool> onSaved,
+    FormFieldSetter<bool>? onSaved,
     AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
-    VoidCallback onReset,
-    FocusNode focusNode,
-    this.activeColor,
-    @required this.label,
-    this.checkColor,
-    this.subtitle,
-    this.secondary,
+    VoidCallback? onReset,
+    FocusNode? focusNode,
+    required this.activeColor,
+    required this.label,
+    required this.checkColor,
+    required this.subtitle,
+    required this.secondary,
     this.controlAffinity = ListTileControlAffinity.leading,
     this.contentPadding = EdgeInsets.zero,
     this.autofocus = false,

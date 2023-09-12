@@ -3,10 +3,9 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:frappe_app/config/frappe_icons.dart';
-import 'package:frappe_app/config/frappe_palette.dart';
-import 'package:frappe_app/utils/frappe_icon.dart';
+import 'package:webwire_app/config/frappe_icons.dart';
+import 'package:webwire_app/config/frappe_palette.dart';
+import 'package:webwire_app/utils/frappe_icon.dart';
 
 const Duration _kExpand = Duration(milliseconds: 200);
 
@@ -291,11 +290,11 @@ class _CustomExpansionTileState extends State<CustomExpansionTile>
     final ThemeData theme = Theme.of(context);
     _borderColorTween.end = theme.dividerColor;
     _headerColorTween
-      ..begin = theme.textTheme.subtitle1!.color
-      ..end = theme.accentColor;
+      ..begin = theme.textTheme.titleMedium!.color
+      ..end = theme.canvasColor;
     _iconColorTween
       ..begin = theme.unselectedWidgetColor
-      ..end = theme.accentColor;
+      ..end = theme.canvasColor;
     super.didChangeDependencies();
   }
 

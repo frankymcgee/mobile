@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frappe_app/config/frappe_palette.dart';
+import 'package:webwire_app/config/frappe_palette.dart';
 
 // Color palette for the unthemed pages
 class Palette {

@@ -1,6 +1,4 @@
-// @dart=2.9
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 
@@ -255,27 +253,27 @@ class FormBuilderTypeAhead<T> extends FormBuilderField<T> {
   /// Controls the text being edited.
   ///
   /// If null, this widget will create its own [TextEditingController].
-  final TextEditingController controller;
+  final TextEditingController? controller;
 
   final bool hideKeyboard;
 
   /// Creates text field that auto-completes user input from a list of items
   FormBuilderTypeAhead({
-    Key key,
+    Key? key,
     //From Super
-    @required String name,
-    FormFieldValidator<T> validator,
-    T initialValue,
+    required String? name,
+    FormFieldValidator<T>? validator,
+    required T initialValue,
     InputDecoration decoration = const InputDecoration(),
-    ValueChanged<T> onChanged,
-    ValueTransformer<T> valueTransformer,
+    ValueChanged<T>? onChanged,
+    ValueTransformer<T>? valueTransformer,
     bool enabled = true,
-    FormFieldSetter<T> onSaved,
+    FormFieldSetter<T>? onSaved,
     AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
-    VoidCallback onReset,
-    FocusNode focusNode,
-    @required this.itemBuilder,
-    @required this.suggestionsCallback,
+    VoidCallback? onReset,
+    FocusNode? focusNode,
+    required this.itemBuilder,
+    required this.suggestionsCallback,
     this.getImmediateSuggestions = false,
     this.selectionToTextTransformer,
     this.errorBuilder,

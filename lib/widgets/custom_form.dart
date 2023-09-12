@@ -2,15 +2,15 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:frappe_app/app/locator.dart';
-import 'package:frappe_app/form/controls/control.dart';
-import 'package:frappe_app/model/common.dart';
-import 'package:frappe_app/model/doctype_response.dart';
-import 'package:frappe_app/services/api/api.dart';
-import 'package:frappe_app/utils/form_helper.dart';
-import 'package:frappe_app/utils/helpers.dart';
-import 'package:frappe_app/views/base_viewmodel.dart';
-import 'package:frappe_app/views/base_widget.dart';
+import 'package:webwire_app/app/locator.dart';
+import 'package:webwire_app/form/controls/control.dart';
+import 'package:webwire_app/model/common.dart';
+import 'package:webwire_app/model/doctype_response.dart';
+import 'package:webwire_app/services/api/api.dart';
+import 'package:webwire_app/utils/form_helper.dart';
+import 'package:webwire_app/utils/helpers.dart';
+import 'package:webwire_app/views/base_viewmodel.dart';
+import 'package:webwire_app/views/base_widget.dart';
 
 class CustomForm extends StatelessWidget {
   final FormHelper formHelper;

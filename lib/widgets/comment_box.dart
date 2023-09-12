@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_html/flutter_html.dart';
-import 'package:frappe_app/config/frappe_icons.dart';
-import 'package:frappe_app/model/get_doc_response.dart';
-import 'package:frappe_app/model/offline_storage.dart';
-import 'package:frappe_app/utils/frappe_icon.dart';
+import 'package:webwire_app/config/frappe_icons.dart';
+import 'package:webwire_app/model/get_doc_response.dart';
+import 'package:webwire_app/model/offline_storage.dart';
+import 'package:webwire_app/utils/frappe_icon.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 import '../app/locator.dart';
@@ -67,7 +67,7 @@ class CommentBox extends StatelessWidget {
                             return AlertDialog(
                               title: Text('Are you sure'),
                               actions: <Widget>[
-                                FlatButton(
+                                TextButton(
                                   child: Text('Yes'),
                                   onPressed: () async {
                                     Navigator.of(context).pop();
@@ -76,7 +76,7 @@ class CommentBox extends StatelessWidget {
                                     callback();
                                   },
                                 ),
-                                FlatButton(
+                                TextButton(
                                   child: Text('No'),
                                   onPressed: () {
                                     Navigator.of(context).pop();

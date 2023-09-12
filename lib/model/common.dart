@@ -1,5 +1,5 @@
 import 'package:file_picker/file_picker.dart';
-import 'package:frappe_app/model/doctype_response.dart';
+import 'package:webwire_app/model/doctype_response.dart';
 
 class ErrorResponse {
   late String statusMessage;

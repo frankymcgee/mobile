@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:frappe_app/config/frappe_icons.dart';
-import 'package:frappe_app/config/frappe_palette.dart';
-import 'package:frappe_app/config/palette.dart';
-import 'package:frappe_app/utils/frappe_icon.dart';
-import 'package:frappe_app/utils/indicator.dart';
-import 'package:frappe_app/widgets/collapsed_avatars.dart';
-import 'package:frappe_app/widgets/like_doc.dart';
+import 'package:webwire_app/config/frappe_icons.dart';
+import 'package:webwire_app/config/frappe_palette.dart';
+import 'package:webwire_app/config/palette.dart';
+import 'package:webwire_app/utils/frappe_icon.dart';
+import 'package:webwire_app/utils/indicator.dart';
+import 'package:webwire_app/widgets/collapsed_avatars.dart';
+import 'package:webwire_app/widgets/like_doc.dart';
 
 class ListItem extends StatelessWidget {
   final String? title;

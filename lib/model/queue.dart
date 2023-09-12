@@ -1,4 +1,4 @@
-import 'package:frappe_app/model/common.dart';
+import 'package:webwire_app/model/common.dart';
 import 'package:hive/hive.dart';
 
 import '../services/storage_service.dart';

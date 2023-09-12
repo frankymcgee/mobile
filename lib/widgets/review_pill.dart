@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:frappe_app/config/frappe_palette.dart';
-import 'package:frappe_app/model/get_doc_response.dart';
-import 'package:frappe_app/widgets/user_avatar.dart';
+import 'package:webwire_app/config/frappe_palette.dart';
+import 'package:webwire_app/model/get_doc_response.dart';
+import 'package:webwire_app/widgets/user_avatar.dart';
 
 class ReviewPill extends StatelessWidget {
   final EnergyPointLogs review;

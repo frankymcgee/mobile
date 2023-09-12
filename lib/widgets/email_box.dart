@@ -3,13 +3,13 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:frappe_app/config/frappe_icons.dart';
-import 'package:frappe_app/config/frappe_palette.dart';
-import 'package:frappe_app/model/get_doc_response.dart';
-import 'package:frappe_app/utils/dio_helper.dart';
-import 'package:frappe_app/utils/frappe_icon.dart';
-import 'package:frappe_app/utils/helpers.dart';
-import 'package:frappe_app/views/login/login_view.dart';
+import 'package:webwire_app/config/frappe_icons.dart';
+import 'package:webwire_app/config/frappe_palette.dart';
+import 'package:webwire_app/model/get_doc_response.dart';
+import 'package:webwire_app/utils/dio_helper.dart';
+import 'package:webwire_app/utils/frappe_icon.dart';
+import 'package:webwire_app/utils/helpers.dart';
+import 'package:webwire_app/views/login/login_view.dart';
 import 'package:open_file/open_file.dart';
 
 import 'package:timeago/timeago.dart' as timeago;

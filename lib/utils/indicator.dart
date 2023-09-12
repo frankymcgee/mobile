@@ -1,7 +1,5 @@
-// @dart=2.9
-
 import 'package:flutter/material.dart';
-import 'package:frappe_app/config/palette.dart';
+import 'package:webwire_app/config/palette.dart';
 
 class Indicator {
   static Widget buildStatusButton(String doctype, String status) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:frappe_app/services/storage_service.dart';
-import 'package:frappe_app/utils/helpers.dart';
+import 'package:webwire_app/services/storage_service.dart';
+import 'package:webwire_app/utils/helpers.dart';
 
 import 'app/locator.dart';
 
