@@ -9,7 +9,7 @@ import 'package:webwire_app/views/new_doc/new_doc_viewmodel.dart';
 import 'package:webwire_app/widgets/header_app_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
+//import 'package:flutter_form_builder/flutter_form_builder.dart';
 
 import '../../model/doctype_response.dart';
 
@@ -22,7 +22,7 @@ class NewDoc extends StatefulWidget {
   final DoctypeResponse meta;
 
   const NewDoc({
-    @required this.meta,
+    required this.meta,
   });
 
   @override

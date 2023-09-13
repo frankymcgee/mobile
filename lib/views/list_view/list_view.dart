@@ -12,7 +12,7 @@ import 'package:timeago/timeago.dart' as timeago;
 
 import '../../model/doctype_response.dart';
 
-import '../../app/locator.dart';
+//import '../../app/locator.dart';
 
 import '../../views/list_view/list_view_viewmodel.dart';
 
@@ -59,7 +59,7 @@ class CustomListView extends StatelessWidget {
             )
           : model.hasError
               ? handleError(
-                  error: model.error,
+                  error: model.error as ErrorResponse,
                   context: context,
                   onRetry: () {
                     model.meta = meta;

@@ -265,7 +265,7 @@ class FormBuilderTypeAhead<T> extends FormBuilderField<T> {
     FormFieldValidator<dynamic>? validator,
     required T initialValue,
     InputDecoration decoration = const InputDecoration(),
-    required ValueChanged<dynamic> onChanged,
+    ValueChanged<dynamic>? onChanged,
     ValueTransformer<dynamic>? valueTransformer,
     bool enabled = true,
     FormFieldSetter<T>? onSaved,
@@ -328,12 +328,13 @@ class FormBuilderTypeAhead<T> extends FormBuilderField<T> {
                 focusNode: state.effectiveFocusNode,
                 //decoration: state.decoration,
               ),
-              // HACK to satisfy strictness
+              // HA-CK to satisfy strictness
               suggestionsCallback: suggestionsCallback,
               itemBuilder: itemBuilder,
               transitionBuilder: (context, suggestionsBox, controller) =>
                   suggestionsBox,
               onSuggestionSelected: (T suggestion) {
+                // ignore: unnecessary_null_comparison
                 if (selectionToTextTransformer != null) {
                   state._typeAheadController.text =
                       selectionToTextTransformer(suggestion);

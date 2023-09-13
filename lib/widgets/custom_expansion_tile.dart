@@ -43,9 +43,7 @@ class CustomExpansionTile extends StatefulWidget {
     this.expandedCrossAxisAlignment,
     this.expandedAlignment,
     this.leadingArrow = false,
-  })  : assert(initiallyExpanded != null),
-        assert(maintainState != null),
-        assert(
+  })  : assert(
           expandedCrossAxisAlignment != CrossAxisAlignment.baseline,
           'CrossAxisAlignment.baseline is not supported since the expanded children '
           'are aligned in a column, not a row. Try to use another constant.',
@@ -164,7 +162,9 @@ class _CustomExpansionTileState extends State<CustomExpansionTile>
   late Animation<double> _iconTurns;
   late Animation<double> _heightFactor;
   late Animation<Color?> _borderColor;
+  // ignore: unused_field
   late Animation<Color?> _headerColor;
+  // ignore: unused_field
   late Animation<Color?> _iconColor;
   late Animation<Color?> _backgroundColor;
 
@@ -182,7 +182,7 @@ class _CustomExpansionTileState extends State<CustomExpansionTile>
     _backgroundColor =
         _controller.drive(_backgroundColorTween.chain(_easeOutTween));
 
-    _isExpanded = PageStorage.of(context)?.readState(context) as bool? ??
+    _isExpanded = PageStorage.of(context).readState(context) as bool? ??
         widget.initiallyExpanded;
     if (_isExpanded) _controller.value = 1.0;
   }
@@ -206,7 +206,7 @@ class _CustomExpansionTileState extends State<CustomExpansionTile>
           });
         });
       }
-      PageStorage.of(context)?.writeState(context, _isExpanded);
+      PageStorage.of(context).writeState(context, _isExpanded);
     });
     if (widget.onExpansionChanged != null)
       widget.onExpansionChanged!(_isExpanded);

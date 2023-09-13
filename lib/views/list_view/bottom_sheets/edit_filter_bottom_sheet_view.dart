@@ -14,58 +14,31 @@ import 'package:webwire_app/views/list_view/bottom_sheets/edit_filter_bottom_she
 import 'package:webwire_app/widgets/frappe_bottom_sheet.dart';
 
 class EditFilterBottomSheetView extends StatelessWidget {
-  final int page;
-  final List<DoctypeField> fields;
-  final Filter filter;
+  final int? page;
+  final List<DoctypeField>? fields;
+  final Filter? filter;
 
   const EditFilterBottomSheetView({
-    @required this.page,
+    this.page,
     this.fields,
     this.filter,
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BaseView<EditFilterBottomSheetViewModel>(
       onModelReady: (model) {
-        model.pageNumber = page;
-        model.filter = filter;
+        model.pageNumber = page as int;
+        model.filter = filter as Filter;
       },
       builder: (context, model, child) {
-        Widget widget;
         if (model.pageNumber == 1) {
-          widget = SelectFilterField(
-            fields: fields,
-            model: model,
-            onActionButtonPress: () {
-              model.moveToPage(2);
-            },
-          );
         } else if (model.pageNumber == 2) {
-          widget = SelectFilterOperator(
-            model: model,
-            leadingOnPressed: () {
-              model.moveToPage(1);
-            },
-            onActionButtonPress: () {
-              model.moveToPage(3);
-            },
-          );
-        } else if (model.pageNumber == 3) {
-          widget = EditValue(
-            model: model,
-            leadingOnPressed: () {
-              model.moveToPage(2);
-            },
-            onActionButtonPress: (Filter filter) {
-              Navigator.of(context).pop(filter);
-            },
-          );
-        }
+        } else if (model.pageNumber == 3) {}
         return FractionallySizedBox(
           heightFactor: 0.55,
-          child: widget,
+          child: this,
         );
       },
     );
@@ -73,16 +46,16 @@ class EditFilterBottomSheetView extends StatelessWidget {
 }
 
 class SelectFilterField extends StatelessWidget {
-  final Function onActionButtonPress;
-  final Function leadingOnPressed;
-  final List<DoctypeField> fields;
-  final EditFilterBottomSheetViewModel model;
+  final Function? onActionButtonPress;
+  final Function? leadingOnPressed;
+  final List<DoctypeField>? fields;
+  final EditFilterBottomSheetViewModel? model;
 
   SelectFilterField({
     this.onActionButtonPress,
     this.leadingOnPressed,
-    @required this.fields,
-    @required this.model,
+    this.fields,
+    this.model,
   });
 
   @override
@@ -90,31 +63,31 @@ class SelectFilterField extends StatelessWidget {
     return FrappeBottomSheet(
       title: 'Choose filter field',
       trailing: Text(
-        model.filter.isInit ? 'Next' : 'Done',
+        model!.filter!.isInit ? 'Next' : 'Done',
         style: TextStyle(
           color: FrappePalette.blue[500],
         ),
       ),
       onActionButtonPress: () {
-        if (model.filter.isInit) {
-          model.moveToPage(2);
+        if (model!.filter!.isInit) {
+          model!.moveToPage(2);
         } else {
-          Navigator.of(context).pop(model.filter);
+          Navigator.of(context).pop(model!.filter);
         }
       },
       body: ListView(
-          children: fields.map((field) {
+          children: fields!.map((field) {
         return Container(
-          color: field.fieldname == model.filter.field.fieldname
+          color: field.fieldname == model!.filter!.field.fieldname
               ? FrappePalette.grey[100]
               : null,
           child: ListTile(
             onTap: () {
-              model.updateFieldName(field);
+              model!.updateFieldName(field);
             },
             visualDensity: VisualDensity(vertical: -4),
             title: Text(
-              field.label,
+              field.label as String,
               style: TextStyle(
                 color: FrappePalette.grey[700],
               ),
@@ -136,24 +109,24 @@ class SelectFilterOperator extends StatelessWidget {
   final EditFilterBottomSheetViewModel model;
 
   SelectFilterOperator({
-    this.onActionButtonPress,
-    this.leadingOnPressed,
-    this.model,
+    required this.onActionButtonPress,
+    required this.leadingOnPressed,
+    required this.model,
   });
 
   @override
   Widget build(BuildContext context) {
     return FrappeBottomSheet(
       trailing: Text(
-        model.filter.isInit ? 'Next' : 'Done',
+        model.filter!.isInit ? 'Next' : 'Done',
         style: TextStyle(
           color: FrappePalette.blue[500],
         ),
       ),
-      leadingOnPressed: model.filter.isInit ? leadingOnPressed : null,
-      leadingText: model.filter.isInit ? "Back" : null,
+      leadingOnPressed: model.filter!.isInit ? leadingOnPressed.call() : null,
+      leadingText: model.filter!.isInit ? "Back" : null,
       onActionButtonPress: () {
-        if (model.filter.isInit) {
+        if (model.filter!.isInit) {
           model.moveToPage(3);
         } else {
           Navigator.of(context).pop(model.filter);
@@ -162,14 +135,14 @@ class SelectFilterOperator extends StatelessWidget {
       title: 'Choose filter operator',
       body: ListView(
           children: Constants.filterOperators.where((opt) {
-        if (model.filter.field.fieldtype == "Check") {
+        if (model.filter!.field.fieldtype == "Check") {
           if (opt.label == "Equals") {
             return true;
           } else {
             return false;
           }
-        } else if (model.filter.field.fieldname == "_assign" ||
-            model.filter.field.fieldname == "owner") {
+        } else if (model.filter!.field.fieldname == "_assign" ||
+            model.filter!.field.fieldname == "owner") {
           if (opt.label == "Like") {
             return true;
           } else {
@@ -181,7 +154,7 @@ class SelectFilterOperator extends StatelessWidget {
       }).map(
         (opt) {
           return Container(
-            color: opt == model.filter.filterOperator
+            color: opt == model.filter!.filterOperator
                 ? FrappePalette.grey[100]
                 : null,
             child: ListTile(
@@ -213,9 +186,9 @@ class EditValue extends StatefulWidget {
   final EditFilterBottomSheetViewModel model;
 
   EditValue({
-    this.onActionButtonPress,
-    this.leadingOnPressed,
-    this.model,
+    required this.onActionButtonPress,
+    required this.leadingOnPressed,
+    required this.model,
   });
 
   @override
@@ -228,9 +201,9 @@ class _EditValueState extends State<EditValue> {
   Widget build(BuildContext context) {
     return FrappeBottomSheet(
       title: 'Edit Value',
-      leadingText: widget.model.filter.isInit ? 'Back' : null,
+      leadingText: widget.model.filter!.isInit ? 'Back' : null,
       leadingOnPressed:
-          widget.model.filter.isInit ? widget.leadingOnPressed : null,
+          widget.model.filter!.isInit ? widget.leadingOnPressed.call() : null,
       trailing: Text(
         'Done',
         style: TextStyle(
@@ -238,8 +211,9 @@ class _EditValueState extends State<EditValue> {
         ),
       ),
       onActionButtonPress: () {
-        _fbKey.currentState.save();
-        var v = _fbKey.currentState.value[widget.model.filter.field.fieldname];
+        _fbKey.currentState?.save();
+        var v =
+            _fbKey.currentState?.value[widget.model.filter!.field.fieldname];
         widget.model.updateValue(v);
         widget.onActionButtonPress(widget.model.filter);
       },
@@ -248,20 +222,20 @@ class _EditValueState extends State<EditValue> {
           FormBuilder(
             key: _fbKey,
             child: Builder(builder: (context) {
-              if (widget.model.filter.field.fieldtype == "Check") {
-                widget.model.filter.field.options = ["Yes", "No"];
+              if (widget.model.filter!.field.fieldtype == "Check") {
+                widget.model.filter!.field.options = ["Yes", "No"];
                 return Select(
-                  doctypeField: widget.model.filter.field,
+                  doctypeField: widget.model.filter!.field,
                   doc: {
-                    "${widget.model.filter.field.fieldname}":
-                        widget.model.filter.value
+                    "${widget.model.filter!.field.fieldname}":
+                        widget.model.filter!.value
                   },
                 );
               } else {
                 return makeControl(
-                  field: widget.model.filter.field,
+                  field: widget.model.filter!.field,
                   doc: {
-                    widget.model.filter.field.fieldname: "",
+                    widget.model.filter!.field.fieldname: "",
                   },
                 );
               }

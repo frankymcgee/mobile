@@ -16,7 +16,7 @@ class FrappeIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return SvgPicture.asset(
       path,
-      color: color,
+      //color: color,
       height: size,
       width: size,
     );

@@ -170,6 +170,7 @@ class ListItem extends StatelessWidget {
                     ),
                   ),
                   Spacer(),
+                  // ignore: unnecessary_null_comparison
                   assignee != null
                       ? CollapsedAvatars(assignee)
                       : Container(

@@ -168,7 +168,7 @@ class CustomCheckbox extends StatefulWidget {
 
   /// The color to use when this checkbox is checked.
   ///
-  /// Defaults to [ThemeData.toggleableActiveColor].
+  /// Defaults to [///ThemeData.toggleableActiveColor].
   ///
   /// If [fillColor] returns a non-null color in the [MaterialState.selected]
   /// state, it will be used instead of this color.
@@ -187,8 +187,8 @@ class CustomCheckbox extends StatefulWidget {
   /// If null, then the value of [activeColor] is used in the selected
   /// state. If that is also null, the value of [CheckboxThemeData.fillColor]
   /// is used. If that is also null, then [ThemeData.disabledColor] is used in
-  /// the disabled state, [ThemeData.toggleableActiveColor] is used in the
-  /// selected state, and [ThemeData.unselectedWidgetColor] is used in the
+  /// the disabled state, [///ThemeData.toggleableActiveColor] is used in the
+  /// selected state, and [///ThemeData.unselectedWidgetColor] is used in the
   /// default state.
   final MaterialStateProperty<Color?>? fillColor;
 
@@ -274,7 +274,7 @@ class CustomCheckbox extends StatefulWidget {
   /// [kRadialReactionAlpha], [focusColor] and [hoverColor] is used in the
   /// pressed, focused and hovered state. If that is also null,
   /// the value of [CheckboxThemeData.overlayColor] is used. If that is
-  /// also null, then the value of [ThemeData.toggleableActiveColor] with alpha
+  /// also null, then the value of [///ThemeData.toggleableActiveColor] with alpha
   /// [kRadialReactionAlpha], [ThemeData.focusColor] and [ThemeData.hoverColor]
   /// is used in the pressed, focused and hovered state.
   final MaterialStateProperty<Color?>? overlayColor;
@@ -369,9 +369,6 @@ class _CustomCheckboxState extends State<CustomCheckbox>
     return MaterialStateProperty.resolveWith((Set<MaterialState> states) {
       if (states.contains(MaterialState.disabled)) {
         return themeData.disabledColor;
-      }
-      if (states.contains(MaterialState.selected)) {
-        return themeData.toggleableActiveColor;
       }
       return themeData.unselectedWidgetColor;
     });

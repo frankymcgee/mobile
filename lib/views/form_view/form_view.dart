@@ -1,19 +1,19 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
+//import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:webwire_app/model/upload_file_response.dart';
 import 'package:webwire_app/utils/form_helper.dart';
 import 'package:webwire_app/utils/indicator.dart';
 import 'package:webwire_app/widgets/header_app_bar.dart';
-import 'package:provider/provider.dart';
+//import 'package:provider/provider.dart';
 
 import 'package:webwire_app/config/frappe_icons.dart';
 import 'package:webwire_app/config/frappe_palette.dart';
 import 'package:webwire_app/model/common.dart';
 import 'package:webwire_app/model/get_doc_response.dart';
 import 'package:webwire_app/utils/frappe_icon.dart';
-import 'package:webwire_app/views/base_view.dart';
+//import 'package:webwire_app/views/base_view.dart';
 import 'package:webwire_app/views/comment_input.dart';
 import 'package:webwire_app/views/form_view/form_view_viewmodel.dart';
 import 'package:webwire_app/widgets/collapsed_avatars.dart';
@@ -28,7 +28,7 @@ import 'package:webwire_app/views/form_view/bottom_sheets/tags/tags_bottom_sheet
 import 'package:webwire_app/widgets/collapsed_reviews.dart';
 
 import '../../model/doctype_response.dart';
-import '../../config/palette.dart';
+//import '../../config/palette.dart';
 
 import '../../utils/helpers.dart';
 import '../../utils/frappe_alert.dart';
@@ -72,7 +72,7 @@ class FormView extends StatelessWidget {
               builder: (context) {
                 if (model.error != null) {
                   return handleError(
-                      error: model.error,
+                      error: model.error as dynamic,
                       context: context,
                       onRetry: () {
                         model.communicationOnly = true;
@@ -101,7 +101,7 @@ class FormView extends StatelessWidget {
                   status = docs[0]["status"];
                 }
 
-                var builderContext;
+                //var builderContext = "";
 
                 // var likedBy = docs[0]['_liked_by'] != null
                 //     ? json.decode(docs[0]['_liked_by'])
@@ -139,7 +139,7 @@ class FormView extends StatelessWidget {
                   ),
                   body: Builder(
                     builder: (context) {
-                      builderContext = context;
+                      //builderContext = context as String;
                       return SingleChildScrollView(
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -166,9 +166,10 @@ class FormView extends StatelessWidget {
                                     ),
                                   ),
                                   Indicator.buildStatusButton(
-                                    model.meta.name,
-                                    status,
-                                  )
+                                        model.meta.name,
+                                        status,
+                                      ) ??
+                                      Container(),
                                 ],
                               ),
                             ),
@@ -533,17 +534,8 @@ class DocInfoItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 60,
-      child: FlatButton(
+      child: TextButton(
         onPressed: onTap,
-        shape: showBorder
-            ? Border(
-                bottom: BorderSide(
-                  color: FrappePalette.grey[200]!,
-                  width: 2,
-                ),
-              )
-            : null,
-        padding: EdgeInsets.symmetric(vertical: 14),
         child: Row(
           children: [
             Text(
@@ -577,6 +569,21 @@ class DocInfoItem extends StatelessWidget {
                   ],
                 ),
           ],
+        ),
+        style: ButtonStyle(
+          shape: showBorder
+              ? MaterialStateProperty.all<OutlinedBorder>(
+                  Border(
+                    bottom: BorderSide(
+                      color: FrappePalette.grey[200]!,
+                      width: 2,
+                    ),
+                  ) as OutlinedBorder,
+                )
+              : null,
+          padding: MaterialStateProperty.all<EdgeInsetsGeometry?>(
+            EdgeInsets.symmetric(vertical: 14),
+          ),
         ),
       ),
     );

@@ -31,7 +31,7 @@ import '../utils/dio_helper.dart';
 import '../utils/enums.dart';
 
 getDownloadPath() async {
-  // TODO
+  // TO-DO
   if (Platform.isAndroid) {
     return '/storage/emulated/0/Download/';
   } else if (Platform.isIOS) {
@@ -48,7 +48,7 @@ downloadFile(String fileUrl, String downloadPath) async {
 
   await FlutterDownloader.enqueue(
     headers: {
-      HttpHeaders.cookieHeader: DioHelper.cookies,
+      HttpHeaders.cookieHeader: (DioHelper.cookies) as String,
     },
     url: absoluteUrl,
     savedDir: downloadPath,
@@ -76,11 +76,11 @@ String toTitleCase(String str) {
           RegExp(
               r'[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+'),
           (Match m) =>
-              "${m[0][0].toUpperCase()}${m[0].substring(1).toLowerCase()}")
+              "${m[0]?[0].toUpperCase()}${m[0]?.substring(1).toLowerCase()}")
       .replaceAll(RegExp(r'(_|-)+'), ' ');
 }
 
-DateTime parseDate(val) {
+DateTime? parseDate(val) {
   if (val == null || val == "") {
     return null;
   } else if (val == "Today") {
@@ -101,10 +101,10 @@ List generateFieldnames(String doctype, DoctypeDoc meta) {
   ];
 
   if (hasTitle(meta)) {
-    fields.add(meta.titleField);
+    fields.add(meta.titleField as String);
   }
 
-  if (meta.fieldsMap.containsKey('status')) {
+  if (meta.fieldsMap!.containsKey('status')) {
     fields.add('status');
   } else {
     fields.add('docstatus');
@@ -164,9 +164,7 @@ getTitle(DoctypeDoc meta, Map doc) {
 clearLoginInfo() async {
   var cookie = await DioHelper.getCookiePath();
   if (Config().uri != null) {
-    cookie.delete(
-      Config().uri,
-    );
+    cookie.delete(Config().uri!);
   }
 
   Config.set('isLoggedIn', false);
@@ -182,9 +180,9 @@ handle403(BuildContext context) async {
 }
 
 handleError({
-  @required ErrorResponse error,
-  @required BuildContext context,
-  Function onRetry,
+  required ErrorResponse error,
+  required BuildContext context,
+  Function? onRetry,
   bool hideAppBar = false,
 }) {
   if (error.statusCode == HttpStatus.forbidden) {
@@ -212,15 +210,15 @@ handleError({
 }
 
 Future<void> showNotification({
-  @required String title,
-  @required String subtitle,
+  required String title,
+  required String subtitle,
   int index = 0,
 }) async {
   const AndroidNotificationDetails androidPlatformChannelSpecifics =
       AndroidNotificationDetails(
     'FrappeChannelId',
     'FrappeChannelName',
-    'FrappeChannelDescription',
+    //'FrappeChannelDescription',
     // importance: Importance.max,
     // priority: Priority.high,
     ticker: 'ticker',
@@ -242,13 +240,13 @@ Future<int> getActiveNotifications() async {
     return 0;
   }
 
-  final List<ActiveNotification> activeNotifications =
+  final List<ActiveNotification>? activeNotifications =
       await flutterLocalNotificationsPlugin
           .resolvePlatformSpecificImplementation<
               AndroidFlutterLocalNotificationsPlugin>()
           ?.getActiveNotifications();
 
-  return activeNotifications.length;
+  return activeNotifications!.length;
 }
 
 Map extractChangedValues(Map original, Map updated) {
@@ -304,16 +302,21 @@ initDb() async {
   await locator<StorageService>().initHiveBox('config');
 }
 
-initLocalNotifications() async {
+// Initialize local notifications
+void initLocalNotifications() async {
+  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+      FlutterLocalNotificationsPlugin();
+
   const AndroidInitializationSettings initializationSettingsAndroid =
       AndroidInitializationSettings('app_icon');
 
-  final IOSInitializationSettings initializationSettingsIOS =
-      IOSInitializationSettings();
+  var initializationSettingsIOS = DarwinInitializationSettings();
   final InitializationSettings initializationSettings = InitializationSettings(
     iOS: initializationSettingsIOS,
     android: initializationSettingsAndroid,
   );
+
+  // Make sure to await the initialization
   await flutterLocalNotificationsPlugin.initialize(
     initializationSettings,
   );
@@ -364,7 +367,7 @@ noInternetAlert(
 }
 
 executeJS({
-  @required String jsString,
+  required String jsString,
 }) {
   JavascriptRuntime flutterJs = getJavascriptRuntime();
   try {

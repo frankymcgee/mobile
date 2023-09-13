@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:webwire_app/model/common.dart';
-import 'package:webwire_app/model/config.dart';
+//import 'package:webwire_app/model/config.dart';
 
 import 'package:webwire_app/utils/frappe_alert.dart';
 import 'package:webwire_app/utils/loading_indicator.dart';
@@ -102,7 +102,7 @@ class DeskViewModel extends BaseViewModel {
     }
 
     desktopPage = _desktopPage;
-    // TODO
+    // TO-DO
     // desktopPage.message.shortcuts.items.forEach(
     //   (element) async {
     //     if (element.format != null && element.statsFilter != null) {

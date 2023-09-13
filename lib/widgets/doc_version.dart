@@ -1,18 +1,18 @@
 import 'dart:convert';
-import 'dart:io';
+//import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-//
+
 import 'package:webwire_app/config/frappe_palette.dart';
 import 'package:webwire_app/model/offline_storage.dart';
 import 'package:html/parser.dart';
 import 'package:timeago/timeago.dart' as timeago;
-import 'package:url_launcher/url_launcher.dart';
+//import 'package:url_launcher/url_launcher.dart';
 
-import '../utils/dio_helper.dart';
+//import '../utils/dio_helper.dart';
 import '../utils/helpers.dart';
-import '../utils/http.dart';
+//import '../utils/http.dart';
 
 class DocVersion extends StatelessWidget {
   final Map version;
@@ -102,28 +102,28 @@ class DocVersion extends StatelessWidget {
             color: FrappePalette.grey[600],
           ),
         },
-        // onImageError: (a, b) {
-        //   // TODO
-        //   print(a);
-        //   print(b);
-        // },
-        // onLinkTap: (a, b, c, d) async {
-        //   print("a $a");
-        //   print("b $b");
-        //   print("c $c");
-        //   print("d $d");
-        //   // TODO
-        //   // final absoluteUrl = getAbsoluteUrl(url);
-        //   // if (await canLaunch(absoluteUrl)) {
-        //   //   await launch(
-        //   //     absoluteUrl,
-        //   //     headers: {HttpHeaders.cookieHeader: await DioHelper.getCookies()},
-        //   //   );
-        //   // } else {
-        //   //   throw 'Could not launch $url';
-        //   // }
-        // },
-        onLinkTap: (url, context, __) {},
+        onImageError: (a, b) {
+          // TO-DO
+          print(a);
+          print(b);
+        },
+        onLinkTap: (a, b, c, d) async {
+          print("a $a");
+          print("b $b");
+          print("c $c");
+          print("d $d");
+          // TO-DO
+          // final absoluteUrl = getAbsoluteUrl(url);
+          // if (await canLaunch(absoluteUrl)) {
+          //   await launch(
+          //     absoluteUrl,
+          //     headers: {HttpHeaders.cookieHeader: await DioHelper.getCookies()},
+          //   );
+          // } else {
+          //   throw 'Could not launch $url';
+          // }
+        },
+        //onLinkTap: (url, context, __) {},
       ),
     );
   }

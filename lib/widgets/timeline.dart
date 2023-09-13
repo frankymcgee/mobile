@@ -75,25 +75,7 @@ class Timeline extends StatelessWidget {
         children.add(
           Padding(
             padding: const EdgeInsets.only(left: 6.0),
-            child: FlatButton.icon(
-              color: FrappePalette.grey[600],
-              shape: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.transparent,
-                ),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(6),
-                ),
-              ),
-              label: Text(
-                'New Email',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              icon: FrappeIcon(
-                FrappeIcons.email,
-              ),
+            child: TextButton.icon(
               onPressed: () async {
                 showModalBottomSheet(
                   context: context,
@@ -110,6 +92,21 @@ class Timeline extends StatelessWidget {
                   ),
                 );
               },
+              label: Text(
+                'New Email',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              icon: FrappeIcon(
+                FrappeIcons.email,
+              ),
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.blue,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4),
+                ),
+              ),
             ),
           ),
         );

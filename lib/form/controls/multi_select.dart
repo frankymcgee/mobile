@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
+//import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:webwire_app/model/common.dart';
 import 'package:webwire_app/widgets/form_builder_chips_input.dart';
@@ -87,13 +87,19 @@ class _MultiSelectState extends State<MultiSelect> with Control, ControlInput {
       validator: FormBuilderValidators.compose(validators),
       valueTransformer: widget.valueTransformer ??
           (value) {
-            return value
+            // ignore: unnecessary_null_comparison
+            if (value == null) {
+              return '';
+            }
+
+            return (value)
                 .map((v) {
                   if (v is Map) {
                     return v["value"];
-                  } else {
-                    return v;
+                  } else if (v != null) {
+                    return v.toString();
                   }
+                  return '';
                 })
                 .toList()
                 .join(',');

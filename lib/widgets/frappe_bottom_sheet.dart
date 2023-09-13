@@ -7,8 +7,8 @@ class FrappeBottomSheet extends StatelessWidget {
   final String title;
   final Widget? trailing;
   final String? leadingText;
-  final void Function()? leadingOnPressed;
-  final void Function()? onActionButtonPress;
+  final Function()? leadingOnPressed;
+  final Function()? onActionButtonPress;
   final Widget? bottomBar;
   final bool showLeading;
 
@@ -41,7 +41,7 @@ class FrappeBottomSheet extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             showLeading
-                ? FlatButton(
+                ? TextButton(
                     child: Text(
                       leadingText ?? 'Cancel',
                       style: TextStyle(
@@ -50,15 +50,9 @@ class FrappeBottomSheet extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    padding: EdgeInsets.zero,
-                    minWidth: 70,
-                    onPressed: leadingOnPressed ??
-                        () {
-                          Navigator.of(context).pop();
-                        },
+                    onPressed: leadingOnPressed,
                   )
-                : FlatButton(
-                    padding: EdgeInsets.zero,
+                : TextButton(
                     child: Container(),
                     onPressed: null,
                   ),

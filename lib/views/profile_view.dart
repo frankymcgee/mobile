@@ -9,10 +9,10 @@ import 'package:webwire_app/utils/frappe_icon.dart';
 import 'package:webwire_app/utils/helpers.dart';
 import 'package:webwire_app/utils/navigation_helper.dart';
 import 'package:webwire_app/views/login/login_view.dart';
-import 'package:webwire_app/views/queue.dart';
+//import 'package:webwire_app/views/queue.dart';
 import 'package:webwire_app/widgets/frappe_bottom_sheet.dart';
 import 'package:webwire_app/widgets/frappe_button.dart';
-import 'package:webwire_app/widgets/padded_card_list_tile.dart';
+//import 'package:webwire_app/widgets/padded_card_list_tile.dart';
 import 'package:webwire_app/widgets/user_avatar.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -53,7 +53,7 @@ class ProfileView extends StatelessWidget {
                   color: FrappePalette.grey[900],
                 ),
               ),
-              // TODO: add view profile
+              // TO-DO: add view profile
               // SizedBox(
               //   height: 3,
               // ),
@@ -115,9 +115,9 @@ class ProfileView extends StatelessWidget {
                         title: "Documentation",
                         onTap: () async {
                           var url = "https://docs.erpnext.com/homepage";
-                          if (await canLaunch(url)) {
-                            await launch(
-                              url,
+                          if (await canLaunchUrl(url as Uri)) {
+                            await launchUrl(
+                              url as Uri,
                             );
                           } else {
                             throw 'Could not launch $url';
@@ -137,9 +137,9 @@ class ProfileView extends StatelessWidget {
                         title: "User Forum",
                         onTap: () async {
                           var url = "https://discuss.erpnext.com/";
-                          if (await canLaunch(url)) {
-                            await launch(
-                              url,
+                          if (await canLaunchUrl(url as Uri)) {
+                            await launchUrl(
+                              url as Uri,
                             );
                           } else {
                             throw 'Could not launch $url';
@@ -162,9 +162,9 @@ class ProfileView extends StatelessWidget {
                         onTap: () async {
                           var issueUrl =
                               "https://github.com/frappe/mobile/issues";
-                          if (await canLaunch(issueUrl)) {
-                            await launch(
-                              issueUrl,
+                          if (await canLaunchUrl(issueUrl as Uri)) {
+                            await launchUrl(
+                              issueUrl as Uri,
                             );
                           } else {
                             throw 'Could not launch $issueUrl';
@@ -332,9 +332,9 @@ class ProfileView extends StatelessWidget {
                         title: "View Website",
                         onTap: () async {
                           var url = Config().baseUrl!;
-                          if (await canLaunch(url)) {
-                            await launch(
-                              url,
+                          if (await canLaunchUrl(url as Uri)) {
+                            await launchUrl(
+                              url as Uri,
                             );
                           } else {
                             throw 'Could not launch $url';

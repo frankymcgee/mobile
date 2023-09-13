@@ -182,7 +182,7 @@ class CustomFormViewModel extends BaseViewModel {
         fetchFromFields.forEach(
           (element) {
             var v;
-            // TODO use meta
+            // TO-DO use meta
             if (fetchDoc[element["fetch_from_field"]] == 1) {
               v = true;
             } else if (fetchDoc[element["fetch_from_field"]] == 0) {

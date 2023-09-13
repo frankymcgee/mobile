@@ -26,7 +26,7 @@ void main() async {
   await FlutterDownloader.initialize();
   FlutterDownloader.registerCallback(downloadCallback as DownloadCallback);
   await initApiConfig();
-  await initLocalNotifications();
+  initLocalNotifications();
   // await initAutoSync();
 
   runApp(

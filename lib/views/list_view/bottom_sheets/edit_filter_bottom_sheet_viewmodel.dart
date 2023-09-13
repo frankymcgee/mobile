@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 @lazySingleton
 class EditFilterBottomSheetViewModel extends BaseViewModel {
   var pageNumber = 1;
-  Filter filter;
+  Filter? filter;
 
   moveToPage(int _pageNumber) {
     pageNumber = _pageNumber;
@@ -14,18 +14,18 @@ class EditFilterBottomSheetViewModel extends BaseViewModel {
   }
 
   updateFieldName(DoctypeField field) {
-    filter.field = field;
-    filter.value = null;
+    filter!.field = field;
+    filter!.value = null;
     notifyListeners();
   }
 
   updateFilterOperator(FilterOperator filterOperator) {
-    filter.filterOperator = filterOperator;
+    filter!.filterOperator = filterOperator;
     notifyListeners();
   }
 
   updateValue(String value) {
-    filter.value = value;
-    filter.isInit = false;
+    filter!.value = value;
+    filter!.isInit = false;
   }
 }

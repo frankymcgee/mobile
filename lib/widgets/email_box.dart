@@ -13,7 +13,7 @@ import 'package:webwire_app/views/login/login_view.dart';
 import 'package:open_file/open_file.dart';
 
 import 'package:timeago/timeago.dart' as timeago;
-import 'package:url_launcher/url_launcher.dart';
+//import 'package:url_launcher/url_launcher.dart';
 
 import '../model/config.dart';
 
@@ -321,21 +321,21 @@ class _EmailBoxState extends State<EmailBox> {
                           networkSourceMatcher(): networkImageRender(
                               altWidget: (_) => FrappeLogo()),
                         },
-                        onLinkTap: (url, _, __, ___) async {
-                          print("Opening $url...");
-                          if (url != null) {
-                            if (await canLaunch(url)) {
-                              await launch(
-                                url,
-                                headers: {
-                                  HttpHeaders.cookieHeader: DioHelper.cookies!,
-                                },
-                              );
-                            } else {
-                              throw 'Could not launch $url';
-                            }
-                          }
-                        },
+                        // onLinkTap: (url, _, __, ___) async {
+                        //   print("Opening $url...");
+                        //   if (url != null) {
+                        //     if (await canLaunch(url)) {
+                        //       await launch(
+                        //         url,
+                        //         headers: {
+                        //           HttpHeaders.cookieHeader: DioHelper.cookies!,
+                        //         },
+                        //       );
+                        //     } else {
+                        //       throw 'Could not launch $url';
+                        //     }
+                        //   }
+                        // },
                       ),
                     ),
                   ),

@@ -71,13 +71,7 @@ class CustomFormBuilderCheckbox extends FormBuilderField<bool> {
     required String name,
     FormFieldValidator<bool>? validator,
     bool? initialValue,
-    InputDecoration decoration = const InputDecoration(
-      border: InputBorder.none,
-      focusedBorder: InputBorder.none,
-      enabledBorder: InputBorder.none,
-      errorBorder: InputBorder.none,
-      disabledBorder: InputBorder.none,
-    ),
+    InputDecoration? decoration = const InputDecoration(),
     ValueChanged? onChanged,
     ValueTransformer<bool?>? valueTransformer,
     bool enabled = true,
@@ -106,18 +100,18 @@ class CustomFormBuilderCheckbox extends FormBuilderField<bool> {
           onSaved: onSaved,
           enabled: enabled,
           onReset: onReset,
-          decoration: decoration,
+          //decoration: decoration,
           focusNode: focusNode,
           builder: (FormFieldState<bool> field) {
             final state = field as _CustomFormBuilderCheckboxState;
 
             return InputDecorator(
-              decoration: state.decoration,
+              //decoration: state.decoration,
               child: GestureDetector(
                 onTap: state.enabled
                     ? () {
                         final newValue = !(field.value ?? false);
-                        state.requestFocus();
+                        //state.requestFocus();
                         state.didChange(newValue);
                       }
                     : null,
@@ -136,7 +130,7 @@ class CustomFormBuilderCheckbox extends FormBuilderField<bool> {
                                 : state.value,
                             onChanged: state.enabled
                                 ? (val) {
-                                    state.requestFocus();
+                                    //state.requestFocus();
                                     state.didChange(val);
                                   }
                                 : null,

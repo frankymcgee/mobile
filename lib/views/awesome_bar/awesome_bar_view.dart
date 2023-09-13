@@ -22,7 +22,7 @@ class Awesombar extends StatelessWidget {
       builder: (context, model, child) {
         if (model.error != null) {
           return handleError(
-            error: model.error,
+            error: (model.error) as dynamic,
             context: context,
             onRetry: () {
               model.refresh();
@@ -148,7 +148,7 @@ class Awesombar extends StatelessWidget {
                 Flexible(
                   child: Padding(
                     padding: const EdgeInsets.only(left: 8.0, bottom: 8),
-                    child: FlatButton(
+                    child: TextButton(
                       child: Text(
                         'Cancel',
                         style: TextStyle(
@@ -156,8 +156,10 @@ class Awesombar extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      padding: EdgeInsets.zero,
-                      minWidth: 70,
+                      style: ButtonStyle(
+                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                            EdgeInsets.zero),
+                      ),
                       onPressed: () {
                         FocusScope.of(context).requestFocus(FocusNode());
                       },
