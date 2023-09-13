@@ -438,14 +438,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
-  flutter_colorpicker:
-    dependency: "direct overridden"
-    description:
-      name: flutter_colorpicker
-      sha256: "0bb8b140aa387fa924c11f047654e301c6a76f54f88895a2a5419a26f4f38f4f"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.6.1"
   flutter_downloader:
     dependency: "direct main"
     description:
