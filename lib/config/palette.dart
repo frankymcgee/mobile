@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:webwire_app/config/frappe_palette.dart';
 
 // Color palette for the unthemed pages
